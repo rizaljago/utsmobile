@@ -1,4 +1,4 @@
-com.example.love_yourselfid
+com.example.loveyourselffix
 attr alpha
 attr font
 attr fontProviderAuthority

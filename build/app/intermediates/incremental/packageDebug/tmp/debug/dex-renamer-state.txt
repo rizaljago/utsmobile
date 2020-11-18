@@ -1,4 +1,4 @@
-#Tue Nov 17 01:43:26 ICT 2020
-base.0=C\:\\Users\\RIZAL\\Documents\\love_yourselfiddd\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Wed Nov 18 13:18:25 ICT 2020
+base.0=D\:\\SEMESTER 5\\PROJEKAN SMT 5\\MOBILE\\loveyourselffix\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

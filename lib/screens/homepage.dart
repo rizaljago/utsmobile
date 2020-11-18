@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:love_yourselfid/screens/akunpage.dart';
-import 'package:love_yourselfid/screens/loginpage.dart';
-import 'package:love_yourselfid/utils/customclipper.dart';
+import 'package:loveyourselffix/screens/akunpage.dart';
+import 'package:loveyourselffix/screens/beritapage.dart';
+import 'package:loveyourselffix/screens/eventpage.dart';
+import 'package:loveyourselffix/screens/loginpage.dart';
+import 'package:loveyourselffix/utils/customclipper.dart';
 
 
 
@@ -72,11 +74,12 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
 
                 )),
-                onTap: () {
-                  // Change the applications state
-                  print("Change page");
-                  Navigator.pop(context);
-                },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BeritaPage()),
+                    );
+                  }
               ),
               ListTile(
                 leading: Icon(Icons.event),
@@ -86,11 +89,12 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
 
                 )),
-                onTap: () {
-                  // Change the applications state
-
-                  Navigator.pop(context);
-                },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EventPage()),
+                    );
+                  }
               ),
               ListTile(
               leading: Icon(Icons.chrome_reader_mode),
@@ -100,11 +104,12 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
 
           )),
-        onTap: () {
-          // Change the applications state
-          print("Silahkan Pindah Halaman");
-          Navigator.pop(context);
-        },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BeritaPage()),
+                    );
+                  }
       ),
               ListTile(
                 leading: Icon(Icons.people),

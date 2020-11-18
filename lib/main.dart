@@ -4,6 +4,10 @@ import 'screens/loginpage.dart';
 import 'screens/homepage.dart';
 import 'screens/registerpage.dart';
 import 'screens/akunpage.dart';
+import 'screens/beritapage.dart';
+import 'screens/artikelpage.dart';
+import 'screens/eventpage.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -13,6 +17,9 @@ class MyApp extends StatelessWidget {
     HomePage.tag: (context) => HomePage(),
     RegisterPage.tag: (context) => RegisterPage(),
     AkunPage.tag: (context) => AkunPage(),
+    BeritaPage.tag: (context) => BeritaPage(),
+    ArtikelPage.tag: (context) => ArtikelPage(),
+    EventPage.tag: (context) => EventPage(),
 
   };
 

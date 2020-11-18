@@ -11,11 +11,38 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  void validate(){
+    if(formkey.currentState.validate()){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }else{
+      print("Tidak Tervalidasi");
+    }
+  }
+
+  static String validatepassword(value){
+    if (value!= 'flutter') {
+      return "Password Salah!";
+    } else {
+      return null;
+    }
+  }
+
+  static String validateusernamemasuk(value){
+    if (value!= 'melvaijalvirgi') {
+      return "username salah!";
+    } else {
+      return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+
     final logo = Hero(
       tag: 'hero',
       child: CircleAvatar(
@@ -24,27 +51,34 @@ class _LoginPageState extends State<LoginPage> {
         child: Image.asset('assets/logo.png'),
       ),
     );
-    final email = TextFormField(
-      key: _formkey,
-      keyboardType: TextInputType.emailAddress,
-      autofocus: false,
-      maxLength: 16,
-      decoration: InputDecoration(
-        hintText: 'Email',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
-    );
+    final form = Form(
+      key: formkey,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Email / Username"
+            ),
+            validator: validateusernamemasuk,
 
-    final password = TextFormField(
-      key: _formkey,
-      autofocus: false,
-      obscureText: true,
-      decoration: InputDecoration(
-        hintText: 'Password',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 20.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+
+                  border: OutlineInputBorder(),
+                  labelText: "Password"
+
+              ),
+              obscureText: true,
+              validator: validatepassword,
+            ),
+          )
+        ],
+      )
     );
 
     final loginButton = Padding(
@@ -56,9 +90,7 @@ class _LoginPageState extends State<LoginPage> {
         child: MaterialButton(
           minWidth: 180.0,
           height: 42.0,
-          onPressed: () {
-            Navigator.of(context).pushNamed(HomePage.tag);
-          },
+          onPressed: validate,
           color: Colors.pink.shade200,
           child: Text('Log In', style: TextStyle(color: Colors.black)),
         ),
@@ -91,11 +123,10 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: <Widget>[
             logo,
-            SizedBox(height: 48.0),
-            email,
-            SizedBox(height: 8.0),
-            password,
-            SizedBox(height: 24.0),
+            Padding(
+              padding: EdgeInsets.only(top: 20.0),
+            ),
+            form,
             loginButton,
             forgotLabel,
             daftar
