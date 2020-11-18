@@ -48,6 +48,7 @@ flutter:
   assets:
     - assets/logo.png
     - assets/logoappbar.png
+    - assets/card.png
 
   fonts:
       - family: Nunito
