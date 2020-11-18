@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'homepage.dart';
+import 'artikelpage.dart';
+import 'eventpage.dart';
+import 'beritapage.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 
@@ -11,16 +14,25 @@ class AkunPage extends StatefulWidget {
 }
 
 class _AkunPageState extends State<AkunPage> {
-  int _selectedNavbar = 0;
+  int currentindex;
+  final List<Widget>_children = [
+    HomePage(),
+  ArtikelPage(),
+    EventPage(),
+    BeritaPage(),
 
-  void _changeSelectedNavBar(int index) {
-    setState(() {
-      _selectedNavbar = index;
-    });
-    List indexList = [
-      HomePage()
-    ];
-  }
+  ];
+@override
+  void initState() {
+  super.initState();
+  currentindex = 0;
+}
+
+changePage(int index){
+  setState(() {
+    currentindex=index;
+  });
+}
 Widget textfield({@required String hintText}){
   return Material(
     elevation: 4,
@@ -54,7 +66,126 @@ Widget textfield({@required String hintText}){
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink.shade100,
+      drawer: Drawer(
+        child: Container(
+          color: Colors.pink.shade100,
+          child: ListView(
+            padding: EdgeInsets.only(top: 0),
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              ClipPath(
+                clipper: CustomClipperBuatDra(),
+              ),
+              UserAccountsDrawerHeader(
+                accountName: Text('VirgiMelvaIjal', style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
 
+                )),
+                accountEmail: Text('0810810810811', style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+
+                )),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage('assets/logoappbar.png'),
+                ),
+
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.pinkAccent.shade200, Colors.pinkAccent.shade100],
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    tileMode: TileMode.clamp,
+
+
+
+                  ),
+                ),
+              ),
+
+              ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text("Beranda", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.assignment),
+                  title: Text("Artikel", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ArtikelPage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.event),
+                  title: Text("Event", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EventPage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.chrome_reader_mode),
+                  title: Text("Berita", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BeritaPage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.people),
+                  title: Text("Akun", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AkunPage()),
+                    );
+                  }
+              ),
+
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.pink,
@@ -155,40 +286,7 @@ Widget textfield({@required String hintText}){
 
 
 
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.pink.shade200,
-        items: const <BottomNavigationBarItem>[
-
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Beranda'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            title: Text('Artikel'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            title: Text('Event'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            title: Text('Berita'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text('Akun'),
-
-          ),
-        ],
-        currentIndex: _selectedNavbar ,
-        selectedItemColor: Colors.pink,
-        unselectedItemColor: Colors.grey,
-        showUnselectedLabels: true,
-        onTap: _changeSelectedNavBar,
-      ),
-    );
+      );
   }
 }
 

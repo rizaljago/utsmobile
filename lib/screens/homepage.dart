@@ -4,6 +4,7 @@ import 'akunpage.dart';
 import 'beritapage.dart';
 import 'eventpage.dart';
 import 'loginpage.dart';
+import 'artikelpage.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 
@@ -66,6 +67,22 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+              ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text("Beranda", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }
+              ),
               ListTile(
                 leading: Icon(Icons.assignment),
                 title: Text("Artikel", style: TextStyle(
@@ -77,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => BeritaPage()),
+                      MaterialPageRoute(builder: (context) => ArtikelPage()),
                     );
                   }
               ),
@@ -141,7 +158,7 @@ class _HomePageState extends State<HomePage> {
           ),
           title: Text('LoveYourself.id', style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 26,
             fontWeight: FontWeight.bold,
 
           ),
@@ -167,10 +184,39 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.only(left: 10, top: 0, bottom: 0, right: 10),
         color: Colors.pink.shade100,
-      ),
+        child: Column(
+          children: <Widget>[
+            Row(
+               children: <Widget>[
+              Text('Selamat Datang di LoveYourself.id', style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            ))
+            ]
+            ),
+            Column(
+                children: <Widget>[
+                  Text('"Kamu perlu menemukan kekuatan di dalam dirimu untuk membuat sesuatu yang spesial bagi dirimu sendiri. Ketika kamu menyadari ini maka kamu tidak bisa dihentikan." -Christine Aguilera', style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ))
+                ]
+            ),
 
-    );
+    ]
+        ),
+
+
+        ),
+      );
+
+
+
+
+
+
+
   }
 }
