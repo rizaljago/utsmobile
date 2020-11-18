@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loveyourselffix/screens/akunpage.dart';
-import 'package:loveyourselffix/screens/loginpage.dart';
-import 'package:loveyourselffix/utils/customclipper.dart';
+import 'akunpage.dart';
+import 'loginpage.dart';
+import 'package:love_yourselfid/utils/customclipper.dart';
 
 
 

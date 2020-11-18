@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:loveyourselffix/screens/homepage.dart';
-import 'package:loveyourselffix/utils/customclipper.dart';
+import 'homepage.dart';
+import 'package:love_yourselfid/utils/customclipper.dart';
 
 
 class AkunPage extends StatefulWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loveyourselffix/screens/akunpage.dart';
-import 'package:loveyourselffix/screens/beritapage.dart';
-import 'package:loveyourselffix/screens/eventpage.dart';
-import 'package:loveyourselffix/screens/loginpage.dart';
-import 'package:loveyourselffix/utils/customclipper.dart';
+import 'akunpage.dart';
+import 'beritapage.dart';
+import 'eventpage.dart';
+import 'loginpage.dart';
+import 'package:love_yourselfid/utils/customclipper.dart';
 
 
 
