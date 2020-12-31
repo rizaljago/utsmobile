@@ -8,9 +8,9 @@ PROGRESS 2 : Menerapkan core widget dan root widget -> Membuat tampilang LOGIN R
 
 REGISTER -> Terdapat form untuk mendaftar ke aplikasi
 
-DASHBIARD -> tampilan awal pada aplikasi.
+DASHBOARD -> Tampilan awal pada aplikasi.
 
-PROGRESS tiga :login sudah bisa tervalidasi, dashboard sudah ada isi nya, halaman profil sudah ada.
+PROGRESS tiga :Login sudah bisa tervalidasi, dashboard sudah ada isi nya, halaman profil sudah ada.
 
-buat login menggunakan username: melvaijalvirgi pass: flutter
+Buat login menggunakan username: melvaijalvirgi pass: flutter
  
