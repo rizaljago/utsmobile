@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:love_yourselfid/screens/artikel/artikelpageone.dart';
+import 'package:love_yourselfid/screens/artikel/artikelpagetwo.dart';
 import 'akunpage.dart';
 import 'loginpage.dart';
 import 'akunpage.dart';
@@ -179,8 +181,96 @@ class _ArtikelPageState extends State<ArtikelPage> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.only(left: 10, top: 0, bottom: 0, right: 10),
         color: Colors.pink.shade100,
+        child: Column(
+            children: <Widget>[
+              Card(
+                elevation: 15,
+                shape: (
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    )
+                ),
+                color: Colors.pink.shade50,
+                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text('Sabrina Chairunnisa: Perempuan Juga Bisa Jadi Pelaku Pelecehan Seksual', style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      )),
+                      subtitle: Text(
+                        'Jakarta - Sabrina Chairunnisa ternyata cukup intens mengamati komentar-komentar dari...',
+                        style: TextStyle(color: Colors.black,
+                            fontSize: 16),
+                      ),
+                    ),
+                    Image.asset('assets/card5.png', scale: 1, height: 150,),
+                    ButtonBar(
+                      alignment: MainAxisAlignment.start,
+                      children: [
+                        FlatButton(
+                          textColor: const Color(0xFF6200EE),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ArtikelPageOne()),
+                            );
+                          },
+                          child: const Text('Baca Selengkapnya'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                elevation: 15,
+                shape: (
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    )
+                ),
+                color: Colors.pink.shade50,
+                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text('Soraya Larasati Bersuara Usai Jadi Korban Pelecehan Seksual: Azab Allah Pasti Nyata', style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      )),
+                      subtitle: Text(
+                        'Jakarta - Soraya Larasati menjadi korban pelecehan seksual saat...',
+                        style: TextStyle(color: Colors.black,
+                            fontSize: 16),
+                      ),
+                    ),
+                    Image.asset('assets/card6.png', scale: 1, height: 150,),
+                    ButtonBar(
+                      alignment: MainAxisAlignment.start,
+                      children: [
+                        FlatButton(
+                          textColor: const Color(0xFF6200EE),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ArtikelPageTwo()),
+                            );
+                          },
+                          child: const Text('Baca Selengkapnya'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ]
+        ),
       ),
 
     );
