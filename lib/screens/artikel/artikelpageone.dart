@@ -8,7 +8,7 @@ import 'package:love_yourselfid/screens/homepage.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 class ArtikelPageOne extends StatefulWidget {
-  static String tag = 'news-page-one';
+  static String tag = 'artikel-page-one';
   @override
   _ArtikelPageOneState createState() => new _ArtikelPageOneState();
 }
