@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:love_yourselfid/utils/customclipper.dart';
 import 'akunpage.dart';
 import 'beritapage.dart';
 import 'eventpage.dart';
-import 'loginpage.dart';
 import 'artikelpage.dart';
-import 'package:love_yourselfid/utils/customclipper.dart';
 
 
 
@@ -206,7 +205,7 @@ class _HomePageState extends State<HomePage> {
               )
               ),
               color: Colors.pink.shade50,
-              margin: EdgeInsets.only(left: 10, top: 50, bottom: 0, right: 10),
+              margin: EdgeInsets.only(left: 10, top: 15, bottom: 0, right: 10),
               clipBehavior: Clip.antiAlias,
               child: Column(
                 children: [
@@ -253,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 20,
                     )),
                     subtitle: Text(
-                      'Di temukan Pelecehan seksusal di Tempat A',
+                      'ABG 15 Tahun di Surabaya Alami Pelecehan',
                       style: TextStyle(color: Colors.black,
                           fontSize: 16),
                     ),
@@ -274,29 +273,53 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-
-
-
                 ],
               ),
             ),
-
-
-
-
+            Card(
+              elevation: 15,
+              shape: (
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  )
+              ),
+              color: Colors.pink.shade50,
+              margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    title: const Text('Artikel Terkini', style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )),
+                    subtitle: Text(
+                      'Sabrina Chairunnisa: Perempuan Juga Bisa Jadi Pelaku Pelecehan Seksual!',
+                      style: TextStyle(color: Colors.black,
+                          fontSize: 16),
+                    ),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      FlatButton(
+                        textColor: const Color(0xFF6200EE),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ArtikelPage()),
+                          );
+                        },
+                        child: const Text('Go To Artikel'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
     ]
         ),
-
-
-
         ),
       );
-
-
-
-
-
-
-
   }
 }

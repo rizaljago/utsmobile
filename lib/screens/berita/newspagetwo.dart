@@ -1,28 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:love_yourselfid/screens/berita/newspagetwo.dart';
-import 'akunpage.dart';
-import 'eventpage.dart';
-import 'artikelpage.dart';
-import 'homepage.dart';
-import 'package:love_yourselfid/screens/berita/newspageone.dart';
+import 'package:love_yourselfid/screens/akunpage.dart';
+import 'package:love_yourselfid/screens/beritapage.dart';
+import 'package:love_yourselfid/screens/eventpage.dart';
+import 'package:love_yourselfid/screens/artikelpage.dart';
+import 'package:love_yourselfid/screens/homepage.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
-
-
-class BeritaPage extends StatefulWidget {
-  static String tag = 'berita-page';
+class NewsPageTwo extends StatefulWidget {
+  static String tag = 'news-page-two';
   @override
-  _BeritaPageState createState() => new _BeritaPageState();
+  _NewsPageTwoState createState() => new _NewsPageTwoState();
 }
 
-class _BeritaPageState extends State<BeritaPage> {
+class _NewsPageTwoState extends State<NewsPageTwo> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.pink.shade100,
-      resizeToAvoidBottomPadding: false,
       drawer: Drawer(
         child: Container(
           color: Colors.pink.shade100,
@@ -177,99 +174,40 @@ class _BeritaPageState extends State<BeritaPage> {
 
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.only(left: 10, top: 0, bottom: 0, right: 10),
-        color: Colors.pink.shade100,
-        child: Column(
-            children: <Widget>[
-              Card(
-                elevation: 15,
-                shape: (
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )
-                ),
-                color: Colors.pink.shade50,
-                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: const Text('ABG 15 Tahun di Surabaya Alami Pelecehan', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      )),
-                      subtitle: Text(
-                        'Surabaya - Jangan mudah tergiur tawaran orang tak dikenal. Seorang ABG berusia 15 tahun..',
-                        style: TextStyle(color: Colors.black,
-                            fontSize: 16),
-                      ),
-                    ),
-                    Image.asset('assets/card3.png', scale: 1, height: 150,),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        FlatButton(
-                          textColor: const Color(0xFF6200EE),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => NewsPageOne()),
-                            );
-                          },
-                          child: const Text('Baca Selengkapnya'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollView(
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: 150,
+              width: 20,
+            ),
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Image.asset('assets/card4.png', width: 300,),
+                  Text(' '),
+                  Text('Pelaku Pelecehan Seksual Anak Didominasi Keluarga Dekat, Waspada!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
+                  Text(' '),
+                  Text('          BLITAR - Pelaku pelecehan seksual sepanjang tahun 2020 di Kabupaten Blitar masih didominasi orang dekat korban. Dari 42 kasus kekerasan anak selama Januari- Desember, pelecehan seksual juga masih menempati urutan tertinggi, yakni 34 kasus.'),
+                  Text('  '),
+                  Text('          "Pelaku tetangga dekat, keluarga dekat, bukan orang jauh," ujar Kepala Dinas Pengendalian Penduduk Keluarga Berencana Pemberdayaan Perempuan dan Perlindungan Anak Kabupaten Blitar Eka Purwanta kepada wartawan, Senin (28/12/2020).'),
+                  Text('  '),
+                  Text('          Salah satu faktor penyebab terjadinya pelecehan seksual adalah pemakaian gadget, terutama terkait konten pornografi yang mudah diakses. Rasa penasaran atau ingin tahu yang mendorong pelaku mewujudkan rasa penasarannya.'),
+                  Text('  '),
+                  Text('          Sementara korbannya, kata Eka, hampir selalu diiming-imingi hal sepele seperti makanan dan uang. "Dampak dari HP (gadget)," tambah Eka.'),
+                  Text('  '),
+                  Text('          Kendati demikian, dibanding tahun 2019, jumlah angka kasus kekerasan anak pada tahun 2020, turun drastis. Selama Januari-Desember 2020, tercatat 42 kasus. Sedangkan pada tahun 2019 sebanyak 84 kasus.'),
+                  Text('  '),
+                  Text('          Sementara untuk kasus kekerasan perempuan sepanjang Januari-Desember 2020, tercatat sebanyak 21 kasus. Kasus kekerasan dalam rumah tangga (KDRT), yakni 14 kasus, masih menempati urutan teratas.'),
+                  Text('  '),
+                  Text('          Menurut Eka, kasus KDRT yang terjadi sebagian besar dilatarbelakangi faktor pernikahan dini atau perkawinan usia muda. Ketidaksiapan mental dan ekonomi dalam membina hubungan rumah tangga, menjadi pemicu terjadinya KDRT.'),
+                  Text('  '),
+                ],
               ),
-              Card(
-                elevation: 15,
-                shape: (
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )
-                ),
-                color: Colors.pink.shade50,
-                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: const Text('Pelaku Pelecehan Seksual Anak Didominasi Keluarga Dekat, Waspada!', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      )),
-                      subtitle: Text(
-                        'BLITAR - Pelaku pelecehan seksual sepanjang tahun 2020 di...',
-                        style: TextStyle(color: Colors.black,
-                            fontSize: 16),
-                      ),
-                    ),
-                    Image.asset('assets/card4.png', scale: 1, height: 150,),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        FlatButton(
-                          textColor: const Color(0xFF6200EE),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => NewsPageTwo()),
-                            );
-                          },
-                          child: const Text('Baca Selengkapnya'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ]
+            ),
+          ],
         ),
       ),
-
     );
   }
 }

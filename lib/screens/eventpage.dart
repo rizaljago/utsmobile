@@ -1,28 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:love_yourselfid/screens/berita/newspagetwo.dart';
 import 'akunpage.dart';
+import 'loginpage.dart';
+import 'akunpage.dart';
+import 'loginpage.dart';
+import 'akunpage.dart';
+import 'beritapage.dart';
 import 'eventpage.dart';
+import 'loginpage.dart';
 import 'artikelpage.dart';
 import 'homepage.dart';
-import 'package:love_yourselfid/screens/berita/newspageone.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 
 
-class BeritaPage extends StatefulWidget {
-  static String tag = 'berita-page';
+class EventPage extends StatefulWidget {
+  static String tag = 'event-page';
   @override
-  _BeritaPageState createState() => new _BeritaPageState();
+  _EventPageState createState() => new _EventPageState();
 }
 
-class _BeritaPageState extends State<BeritaPage> {
+class _EventPageState extends State<EventPage> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink.shade100,
-      resizeToAvoidBottomPadding: false,
+
       drawer: Drawer(
         child: Container(
           color: Colors.pink.shade100,
@@ -142,15 +146,13 @@ class _BeritaPageState extends State<BeritaPage> {
           ),
         ),
       ),
-
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(99),
         child: AppBar(
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
-          title: Text('Berita', style: TextStyle(
+          title: Text('Event', style: TextStyle(
             color: Colors.black,
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -178,96 +180,8 @@ class _BeritaPageState extends State<BeritaPage> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 10, top: 0, bottom: 0, right: 10),
+        margin: EdgeInsets.all(20),
         color: Colors.pink.shade100,
-        child: Column(
-            children: <Widget>[
-              Card(
-                elevation: 15,
-                shape: (
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )
-                ),
-                color: Colors.pink.shade50,
-                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: const Text('ABG 15 Tahun di Surabaya Alami Pelecehan', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      )),
-                      subtitle: Text(
-                        'Surabaya - Jangan mudah tergiur tawaran orang tak dikenal. Seorang ABG berusia 15 tahun..',
-                        style: TextStyle(color: Colors.black,
-                            fontSize: 16),
-                      ),
-                    ),
-                    Image.asset('assets/card3.png', scale: 1, height: 150,),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        FlatButton(
-                          textColor: const Color(0xFF6200EE),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => NewsPageOne()),
-                            );
-                          },
-                          child: const Text('Baca Selengkapnya'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                elevation: 15,
-                shape: (
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    )
-                ),
-                color: Colors.pink.shade50,
-                margin: EdgeInsets.only(left: 10, top: 20, bottom: 0, right: 10),
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: const Text('Pelaku Pelecehan Seksual Anak Didominasi Keluarga Dekat, Waspada!', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      )),
-                      subtitle: Text(
-                        'BLITAR - Pelaku pelecehan seksual sepanjang tahun 2020 di...',
-                        style: TextStyle(color: Colors.black,
-                            fontSize: 16),
-                      ),
-                    ),
-                    Image.asset('assets/card4.png', scale: 1, height: 150,),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        FlatButton(
-                          textColor: const Color(0xFF6200EE),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => NewsPageTwo()),
-                            );
-                          },
-                          child: const Text('Baca Selengkapnya'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ]
-        ),
       ),
 
     );
