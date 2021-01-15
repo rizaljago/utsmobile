@@ -21,15 +21,23 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  http: ^0.12.0
   js: ^0.6.2
   flutter:
     sdk: flutter
 
 
 
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  camera: ^0.5.2+1
+  path_provider: ^1.1.0
+  path: ^1.6.2
+  esys_flutter_share: ^1.0.2
+  ext_storage:
+  permission_handler:
 
 dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
@@ -60,6 +68,8 @@ flutter:
     - assets/card4.png
     - assets/card5.png
     - assets/card6.png
+    - assets/card7.png
+    - assets/card8.png
 
   fonts:
       - family: Nunito
