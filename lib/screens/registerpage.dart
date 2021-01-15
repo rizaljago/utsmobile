@@ -12,11 +12,8 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final daftar = Padding(
-      padding: EdgeInsets.all(92.80),
-      child: Text(
-        'DAFTAR AKUN',
-        style: TextStyle(fontSize: 28.0, color: Colors.black),
-      ),
+      padding: EdgeInsets.all(90.80),
+      child: Image.asset('assets/logo.png'),
     );
 
     final nama = TextFormField(
@@ -33,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
       keyboardType: TextInputType.streetAddress,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'alamat',
+        hintText: 'Alamat',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -43,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
       keyboardType: TextInputType.datetime,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'TanggalLahir',
+        hintText: 'Tanggal Lahir',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),

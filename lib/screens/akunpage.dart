@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:love_yourselfid/screens/camera.dart';
 import 'homepage.dart';
 import 'artikelpage.dart';
 import 'eventpage.dart';
 import 'beritapage.dart';
+import 'implementasiAPI.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 
@@ -163,6 +165,21 @@ Widget textfield({@required String hintText}){
                     );
                   }
               ),
+              ListTile(
+                  leading: Icon(Icons.android),
+                  title: Text("Implementasi API", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ImplementasiAPI()),
+                    );
+                  }
+              ),
 
             ],
           ),
@@ -185,9 +202,9 @@ Widget textfield({@required String hintText}){
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: 450,
+                height: 500,
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -201,7 +218,7 @@ Widget textfield({@required String hintText}){
                       hintText: 'Email',
                     ),
                     textfield(
-                      hintText: 'NoTelepon',
+                      hintText: 'No Telepon',
                     ),
                     Container(
                       height: 50,
@@ -212,7 +229,8 @@ Widget textfield({@required String hintText}){
                         child: Center(
                           child: Text("Update Profile", style: TextStyle(
                             fontFamily: 'Nunito',
-                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
                             color: Colors.black
                           ),),
                         ),
@@ -255,7 +273,12 @@ Widget textfield({@required String hintText}){
           Padding(padding: EdgeInsets.only(bottom: 260, left: 130),
             child: CircleAvatar(
               backgroundColor: Colors.black,
-              child: IconButton(icon: Icon(Icons.edit, color: Colors.white), onPressed: (){}
+              child: IconButton(icon: Icon(Icons.add, color: Colors.white), onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CameraScreen()),
+                );
+              }
                 ),
             ),
           ),

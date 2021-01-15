@@ -5,6 +5,7 @@ import 'akunpage.dart';
 import 'eventpage.dart';
 import 'artikelpage.dart';
 import 'homepage.dart';
+import 'implementasiAPI.dart';
 import 'package:love_yourselfid/screens/berita/newspageone.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
@@ -134,6 +135,21 @@ class _BeritaPageState extends State<BeritaPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => AkunPage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.android),
+                  title: Text("Implementasi API", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ImplementasiAPI()),
                     );
                   }
               ),

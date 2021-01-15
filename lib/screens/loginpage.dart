@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   static String validatepassword(value){
-    if (value!= 'flutter') {
+    if (value!= 'user') {
       return "Password Salah!";
     } else {
       return null;
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   static String validateusernamemasuk(value){
-    if (value!= 'melvaijalvirgi') {
+    if (value!= 'user') {
       return "username salah!";
     } else {
       return null;

@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:love_yourselfid/screens/implementasiAPI.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 import 'akunpage.dart';
 import 'beritapage.dart';
 import 'eventpage.dart';
 import 'artikelpage.dart';
+import 'implementasiAPI.dart';
 
 
 
@@ -16,13 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedNavbar = 0;
-
-  void _changeSelectedNavBar(int index) {
-    setState(() {
-      _selectedNavbar = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +62,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
 
               ListTile(
                   leading: Icon(Icons.home),
@@ -142,6 +138,21 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => AkunPage()),
                   );
                 }
+              ),
+              ListTile(
+                  leading: Icon(Icons.android),
+                  title: Text("Implementasi API", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ImplementasiAPI()),
+                    );
+                  }
               ),
 
             ],

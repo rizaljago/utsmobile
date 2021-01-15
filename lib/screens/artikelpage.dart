@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:love_yourselfid/screens/artikel/artikelpageone.dart';
 import 'package:love_yourselfid/screens/artikel/artikelpagetwo.dart';
 import 'akunpage.dart';
-import 'loginpage.dart';
-import 'akunpage.dart';
 import 'beritapage.dart';
 import 'eventpage.dart';
-import 'loginpage.dart';
-import 'artikelpage.dart';
 import 'homepage.dart';
+import 'implementasiAPI.dart';
 import 'package:love_yourselfid/utils/customclipper.dart';
 
 
@@ -137,6 +134,21 @@ class _ArtikelPageState extends State<ArtikelPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => AkunPage()),
+                    );
+                  }
+              ),
+              ListTile(
+                  leading: Icon(Icons.android),
+                  title: Text("Implementasi API", style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+
+                  )),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ImplementasiAPI()),
                     );
                   }
               ),
